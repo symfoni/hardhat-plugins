@@ -5,7 +5,7 @@ import path from "path";
 import chalk from "chalk";
 import { TsMorphProject } from "./TsMorhProject";
 import "hardhat-deploy/dist/src/type-extensions";
-import "hardhat-typechain/dist/src/type-extensions";
+import "@typechain/hardhat/dist/type-extensions";
 import "./type-extensions";
 import { debug } from "debug";
 
@@ -76,6 +76,7 @@ extendConfig(
           "./frontend/src/hardhat/typechain"
         ),
         target: "ethers-v5",
+        alwaysGenerateOverloads: false,
       };
     } else {
       const userTypechainOutdir = userConfig.typechain.outDir;
